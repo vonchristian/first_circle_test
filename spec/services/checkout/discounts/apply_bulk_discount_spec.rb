@@ -2,7 +2,7 @@ require 'rails_helper'
 
 module Checkout
   module Discounts
-    describe ApplyFreebie, type: :service do
+    describe ApplyBulkDiscount, type: :service do
 
       #sample: the brand new Super iPad will have a bulk discount applied, where the price will drop to $499.99 each, if someone buys more than 4
 

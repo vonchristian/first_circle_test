@@ -8,16 +8,16 @@ class Cart < ApplicationRecord
   end
 
   def total_cost_without_discount
-    sales_line_items.total_cost
+    sales_line_items.total_cost.to_f
   end
 
   def total_discount
-    cart_discounts.total_cost +
+    cart_discounts.total_cost.to_f +
     total_sales_line_item_discounts
 
   end
   def total_sales_line_item_discounts
-    sales_line_items.total_discount
+    sales_line_items.total_discount.to_f
   end
 
   def scan(sku)
