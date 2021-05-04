@@ -15,11 +15,16 @@ rails db:create db:migrate db:seed
 rspec spec/
 ```
 ## Design Considerations
-The code was designed to record computed discount amounts instead of subtracting it from the regular price of products.
+1. The code was designed to record computed discount amounts instead of subtracting it from the regular price of products.
 Considering that a storefront needs this data to:
 * Generate reports for total discount given to customers
 * Record sales discount entry for accounting purposes.
 * Needed data to come up with the Cost of Goods Sold in order for the store front to know their income for a processed order.
+
+2. 'gem money-rails' was used to handle all money calculations
+
+3. Service Objects area created to implement the complex discounting rules and calculation of discount amount.
+
 
 ### Discount Rules
 The following models area created to represent the different discounting rules.
