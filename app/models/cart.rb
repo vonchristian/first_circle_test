@@ -1,9 +1,7 @@
 class Cart < ApplicationRecord
   has_many :sales_line_items, dependent: :destroy
-  has_many :products, through: :sales_line_items
-  has_many :freebies, through: :products
   has_many :cart_discounts, dependent: :destroy
-  has_many :sales_line_item_discounts, through: :sales_line_items
+
   def total_cost
     total_cost_without_discount -
     total_discount
