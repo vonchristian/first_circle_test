@@ -18,7 +18,7 @@ class SalesLineItem < ApplicationRecord
   end
 
   def self.total_cost
-    total_cost_without_discount - total_discount
+    total_cost_without_discount.to_f - total_discount.to_f
   end
 
   def self.total_cost_without_discount
